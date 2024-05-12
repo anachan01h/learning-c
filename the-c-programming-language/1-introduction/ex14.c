@@ -1,31 +1,24 @@
 #include <stdio.h>
 
 int main(void) {
-     int i, j, c;
-     int len;
-     int n_char[96];
+     int i, j, c, n;
+     int n_char[95];
+     int max_n = 0;
 
-     for (i = 0; i < 96; ++i)
+     for (i = 0; i < 95; ++i)
           n_char[i] = 0;
 
-     while ((c = getchar()) != EOF) {
-          if (c == ' ' || c == '\n' || c == '\t') {
-               if (in_word == 1) {
-                    if (len < MAX_WORD_LEN)
-                         ++word_len[len-1];
-                    len = 0;
-               }
-               in_word = 0;
-          } else
-               in_word = 1;
+     while ((c = getchar()) != EOF)
+          if (c >= 0x20 && c < 0x7F)
+               ++n_char[c - 0x20];
 
-          if (in_word == 1)
-               ++len;
-     }
-
-     for (i = 0; i < MAX_WORD_LEN; ++i) {
-          printf("%2d | ", i + 1);
-          for (j = 0; j < word_len[i]; ++j)
+     for (i = 0; i < 95; i++)
+          if (n_char[i] > max_n)
+               max_n = n_char[i];
+     
+     for (i = 0; i < 95; ++i) {
+          printf("%c | ", i + 0x20);
+          for (j = 0; j < (n_char[i] * 76) / max_n; ++j)
                putchar('=');
           putchar('\n');
      }
