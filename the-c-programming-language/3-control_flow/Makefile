@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = ex06
 
 bin/$(NAME): bin/ $(NAME).c
 	gcc -o bin/$(NAME) $(NAME).c
