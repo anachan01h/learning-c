@@ -10,7 +10,7 @@ char pattern[] = "char";
 int main(void) {
     char line[MAXLINE];
     int found = 0;
-    int pos;;
+    int pos;
 
     while (get_line(line, MAXLINE) > 0) {
         pos = strrindex(line, pattern);
