@@ -1,3 +1,9 @@
+/* -----------------------------------------------------------------------------
+ * # Exercício 2
+ * Criar uma função to_argb, usando operadores bitwise, que recebe uma cor de
+ * 32 bits no formato BGRA e converte para o formato ARGB.
+----------------------------------------------------------------------------- */
+
 #include <stdio.h>
 #include <stdint.h>
 

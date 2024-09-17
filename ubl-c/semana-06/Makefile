@@ -1,7 +1,7 @@
-NAME = ex02
+NAME = ex01
 
-bin/$(NAME): bin/ $(NAME).c
-	gcc $(NAME).c -o bin/$(NAME)
+bin/$(NAME): bin/ src/$(NAME).c
+	gcc src/$(NAME).c -o bin/$(NAME)
 
 bin/:
 	mkdir bin
